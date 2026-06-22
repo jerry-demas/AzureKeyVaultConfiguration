@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F49048DF-1D4D-4146-88B3-19E9619184E2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		NuGet.Config = NuGet.Config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CBIZ.SharedPackages.AzureKeyVaultConfiguration", "CBIZ.SharedPackages.AzureKeyVaultConfiguration\CBIZ.SharedPackages.AzureKeyVaultConfiguration.csproj", "{C9F33A26-F053-2267-E15C-E162EB1E2AE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CBIZ.SharedPackages.AzureKeyVaultConfiguration.UnitTests", "CBIZ.SharedPackages.AzureKeyVaultConfiguration.UnitTests\CBIZ.SharedPackages.AzureKeyVaultConfiguration.UnitTests.csproj", "{239EA47F-2021-4A9F-F538-CD41D10993DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{5741BDF3-25CE-487C-A0DE-883DFED08150}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F33A26-F053-2267-E15C-E162EB1E2AE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F33A26-F053-2267-E15C-E162EB1E2AE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F33A26-F053-2267-E15C-E162EB1E2AE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F33A26-F053-2267-E15C-E162EB1E2AE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239EA47F-2021-4A9F-F538-CD41D10993DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239EA47F-2021-4A9F-F538-CD41D10993DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239EA47F-2021-4A9F-F538-CD41D10993DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239EA47F-2021-4A9F-F538-CD41D10993DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5741BDF3-25CE-487C-A0DE-883DFED08150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5741BDF3-25CE-487C-A0DE-883DFED08150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5741BDF3-25CE-487C-A0DE-883DFED08150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5741BDF3-25CE-487C-A0DE-883DFED08150}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB8B227D-F348-425E-A732-7DA83164BA16}
+	EndGlobalSection
+EndGlobal

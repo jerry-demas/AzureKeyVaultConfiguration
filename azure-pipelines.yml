@@ -1,0 +1,40 @@
+trigger:
+  tags:
+    include:
+      - RC/*
+  branches:
+    include:
+      - main
+      
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+- group: CodeSigning
+- name: buildName
+  ${{ if startsWith(variables['Build.SourceBranch'], 'refs/tags/RC/')}}:
+    value: "${{ replace(variables['Build.SourceBranchName'], 'RC/', '') }}"
+  ${{ else }}:    
+    value: "_${{ variables['Build.SourceBranchName']}}"
+
+name: ${{ variables.buildName }}$(rev:.r)
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Software Architecture/PipelineTemplates
+      ref: refs/heads/main # specify the branch or tag
+
+stages:
+- template: Templates/Composite_Build.yml@templates  # Template reference
+  parameters:
+    isReleaseBuild: ${{ not(startsWith(variables.buildName, '_')) }}
+    isSonarQubeScan: true
+    sonarQubeOrganizationKey: "cbiz-appsdev"
+    sonarQubeProjectKey: "CBIZ-AppsDev_CBIZ.SharedPackages.AzureKeyVaultConfiguration"
+    buildProjects: "$(Build.SourcesDirectory)/CBIZ.SharedPackages.AzureKeyVaultConfiguration/CBIZ.SharedPackages.AzureKeyVaultConfiguration.csproj"
+    versionNumber: "$(Build.BuildNumber)"
+    unitTestProjects: "$(Build.SourcesDirectory)/CBIZ.SharedPackages.AzureKeyVaultConfiguration.UnitTests/CBIZ.SharedPackages.AzureKeyVaultConfiguration.UnitTests.csproj"
+    publishVstsFeed: '5e681aee-3ace-4e35-a071-e3cd10af6872'
+    buildOutputPathOverride: '$(Build.SourcesDirectory)/CBIZ.SharedPackages.AzureKeyVaultConfiguration/bin/Release'

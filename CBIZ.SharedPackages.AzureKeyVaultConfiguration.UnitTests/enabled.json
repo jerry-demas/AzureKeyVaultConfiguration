@@ -1,0 +1,10 @@
+{
+  "ConfigOption": {
+    "Value1": "lo0k_its_crazy"
+  },
+  // this is like test case 4, but we are really testing the KeyVaultName working. if this fails for ony the cert and path being thier, we know it got KeyVaultName
+  "AzureKeyVaultAsConfigOptions": {
+    "KeyVaultName": "string",
+    "CertPath": "CBIZ-Dev-KvAccess.pfx"
+  }
+}
